@@ -16,10 +16,10 @@ export default function Menu() {
   return (
     <>
       <nav className="bg-[#1F1F1F] flex justify-between items-center w-full p-4">
-        <a href="#" className="h-10 w-10 invert ml-12 z-30" onClick={handleLogoClick}>
+        <a href="#" className="h-10 w-10 invert ml-20" onClick={handleLogoClick}>
           <img src="/logo.png" alt="logo" />
         </a>
-        <div className="mr-10">
+        <div className="mr-10 font-bold">
           <ul className="text-gray-200 flex space-x-4">
             <li>
               <a

@@ -1,63 +1,82 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+import { Link, animateScroll as scroll } from "react-scroll";
+
 
 export default function Menu() {
   const [activeItem, setActiveItem] = useState(null);
   const navigate = useNavigate();
 
+
   const handleItemClick = (index) => {
     setActiveItem(index);
+    
   };
 
   const handleLogoClick = () => {
     navigate("/")
+    scrollToTop();
   }
+
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
 
   return (
     <>
       <nav className="bg-[#1F1F1F] flex justify-between items-center w-full p-4">
-        <a href="#" className="h-10 w-10 invert ml-20" onClick={handleLogoClick}>
+        <a href="#" className="h-10 w-10 invert ml-20 cursor-pointer" onClick={handleLogoClick}>
           <img src="/logo.png" alt="logo" />
         </a>
         <div className="mr-10 font-bold">
           <ul className="text-gray-200 flex space-x-4">
             <li>
-              <a
-                href="#"
-                className={`hover:text-red-400 ${
+            <Link
+                to="Home"
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className={`hover:text-red-400 cursor-pointer ${
                   activeItem === 0 ? "text-red-400" : ""
                 }`}
                 onClick={() => handleItemClick(0)}
               >
                 Home
-              </a>
+              </Link>
             </li>
+
             <li>
-              <a
-                href="#"
-                className={`hover:text-red-400 ${
+            <Link
+                to="About"
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className={`hover:text-red-400 cursor-pointer ${
                   activeItem === 1 ? "text-red-400" : ""
                 }`}
                 onClick={() => handleItemClick(1)}
               >
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                className={`hover:text-red-400 ${
-                  activeItem === 2 ? "text-red-400" : ""
+            <Link
+                to="Skills"
+                smooth={true}
+                offset={-70}
+                duration={500}
+                className={`hover:text-red-400 cursor-pointer ${
+                  activeItem === 1 ? "text-red-400" : ""
                 }`}
-                onClick={() => handleItemClick(2)}
+                onClick={() => handleItemClick(1)}
               >
                 Skills
-              </a>
+              </Link>
             </li>
             <li>
               <a
                 href="#"
-                className={`hover:text-red-400 ${
+                className={`hover:text-red-400 cursor-pointer ${
                   activeItem === 3 ? "text-red-400" : ""
                 }`}
                 onClick={() => handleItemClick(3)}
@@ -68,7 +87,7 @@ export default function Menu() {
             <li>
               <a
                 href="#"
-                className={`hover:text-red-400 ${
+                className={`hover:text-red-400 cursor-pointer ${
                   activeItem === 4 ? "text-red-400" : ""
                 }`}
                 onClick={() => handleItemClick(4)}
@@ -82,3 +101,5 @@ export default function Menu() {
     </>
   );
 }
+
+/* changer <a> avec Link */

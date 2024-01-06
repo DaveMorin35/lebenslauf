@@ -1,11 +1,33 @@
 import { Link } from "react-router-dom";
-import Menu from "./Menu";
+import Menu from "../components/Menu";
 import { TypeAnimation } from "react-type-animation";
+import { useState } from "react";
+import Footer from "../components/Footer";
 
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value} = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Submitted:", formData);
+  }
+
   return (
     <>
-      <div className="bg-black">
+      <div className="flex flex-col min-h-screen">
+        <div className="bg-black flex-grow">
         <div>
           <Menu />
         </div>
@@ -170,12 +192,14 @@ export default function Home() {
             >
               <img
                 src="Weather.png"
+                alt="weather"
                 className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
               />
             </Link>
             <Link to={{ pathname: "https://wallner.bio/" }} target="_blank">
               <img
                 src="Wallner.png"
+                alt="wallner"
                 className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
               />
             </Link>
@@ -185,6 +209,7 @@ export default function Home() {
             >
               <img
                 src="Movies.png"
+                alt="movies"
                 className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
               />
             </Link>
@@ -204,14 +229,37 @@ export default function Home() {
         <div className="flex justify-center text-red-700 font-bold underline text-2xl mb-12 mt-12">
           <h1>Contact</h1>
         </div>
-        <section id="Contact" className="text-white">
-    
-            <form className="grid">
-              <input placeholder="Name" className="rounded-lg mb-4 py-1 pl-4"></input>
-              <input placeholder="E-Mail" className="rounded-lg mb-4 py-1 pl-4"></input>
-            </form>
-      
+        <section id="Contact" className="">
+          <form onSubmit={handleSubmit} className="grid min-w-96">
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              className="rounded-lg mb-4 py-1 pl-4 text-black"
+              value={formData.name}
+              onChange={handleChange}
+            ></input>
+            <input
+              type="email"
+              placeholder="E-Mail"
+              name="email"
+              className="rounded-lg mb-4 py-1 pl-4"
+              value={formData.email}
+              onChange={handleChange}
+            ></input>
+            <textarea 
+            type="message" 
+            placeholder="Message"
+            name="message"
+            className="rounded-lg mb-4 min-h-56 py-1 pl-4"
+            value={formData.message}
+            onChange={handleChange}
+            ></textarea>
+            <button type="submit" className="rounded-lg bg-red-700 px-4 py-1 mt-10">Submit</button>
+          </form>
         </section>
+        </div>
+      <Footer/>
       </div>
     </>
   );

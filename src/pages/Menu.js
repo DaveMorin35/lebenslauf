@@ -24,7 +24,7 @@ export default function Menu() {
 
   return (
     <>
-      <nav className="bg-[#1F1F1F] flex justify-between items-center w-full p-4">
+      <nav className="bg-[#1F1F1F] flex justify-between items-center w-full p-4 fixed z-10">
         <a href="#" className="h-10 w-10 invert ml-20 cursor-pointer" onClick={handleLogoClick}>
           <img src="/logo.png" alt="logo" />
         </a>
@@ -34,7 +34,7 @@ export default function Menu() {
             <Link
                 to="Home"
                 smooth={true}
-                offset={-70}
+                offset={-200}
                 duration={500}
                 className={`hover:text-red-400 cursor-pointer ${
                   activeItem === 0 ? "text-red-400" : ""
@@ -49,7 +49,7 @@ export default function Menu() {
             <Link
                 to="About"
                 smooth={true}
-                offset={-70}
+                offset={-300}
                 duration={500}
                 className={`hover:text-red-400 cursor-pointer ${
                   activeItem === 1 ? "text-red-400" : ""
@@ -63,7 +63,7 @@ export default function Menu() {
             <Link
                 to="Skills"
                 smooth={true}
-                offset={-70}
+                offset={-200}
                 duration={500}
                 className={`hover:text-red-400 cursor-pointer ${
                   activeItem === 1 ? "text-red-400" : ""
@@ -74,26 +74,32 @@ export default function Menu() {
               </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="Projects"
+                smooth={true}
+                offset={-200}
+                duration={500}
                 className={`hover:text-red-400 cursor-pointer ${
                   activeItem === 3 ? "text-red-400" : ""
                 }`}
                 onClick={() => handleItemClick(3)}
               >
                 Projects
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="Contact"
+                smooth={true}
+                offset={-70}
+                duration={500}
                 className={`hover:text-red-400 cursor-pointer ${
                   activeItem === 4 ? "text-red-400" : ""
                 }`}
                 onClick={() => handleItemClick(4)}
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

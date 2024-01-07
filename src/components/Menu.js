@@ -66,9 +66,9 @@ export default function Menu() {
                 offset={-200}
                 duration={500}
                 className={`hover:text-red-400 cursor-pointer ${
-                  activeItem === 1 ? "text-red-400" : ""
+                  activeItem === 2 ? "text-red-400" : ""
                 }`}
-                onClick={() => handleItemClick(1)}
+                onClick={() => handleItemClick(2)}
               >
                 Skills
               </Link>

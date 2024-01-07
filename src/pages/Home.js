@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import Menu from "../components/Menu";
 import { TypeAnimation } from "react-type-animation";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "emailjs-com";
 import Footer from "../components/Footer";
 
 export default function Home() {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,7 +14,7 @@ export default function Home() {
   });
 
   const handleChange = (e) => {
-    const { name, value} = e.target;
+    const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
@@ -21,245 +23,305 @@ export default function Home() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-  }
+
+    emailjs
+      .send(
+        `service_756ogdf`,
+        `template_lebenslauf`,
+        {
+          to_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        `wJijZj7RJY3OWGgZa`
+      )
+      .then((response) => {
+        alert("message sent successfully");
+        console.log("Email sent successfully:", response);
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Email failed to send:", error);
+      });
+   
+  };
+
+ 
 
   return (
     <>
       <div className="flex flex-col min-h-screen">
         <div className="bg-black flex-grow">
-        <div>
-          <Menu />
+          <div>
+            <Menu />
+          </div>
+          <div className="flex flex-col h-screen justify-center items-center">
+            <section
+              id="Home"
+              className=" text-white grid grid-cols-2 gap-4 ml-20 max-w-7xl"
+            >
+              <div className="">
+                <h2 className="text-5xl font-bold">
+                  Hi, <br></br>I'm <span className="text-red-700">David</span>
+                  <br></br>
+                  <TypeAnimation
+                    sequence={[
+                      "React.js Developer",
+                      500,
+                      "Java Developer",
+                      500,
+                    ]}
+                    speed={40}
+                    repeat={Infinity}
+                  />
+                </h2>
+                <button
+                  type="button"
+                  className="rounded-lg bg-red-700 px-4 py-1 mt-10"
+                >
+                  Contact
+                </button>
+              </div>
+              <div className="ml-48">
+                <img src="/logo.png" alt="logo" className="invert ml-12" />
+              </div>
+            </section>
+          </div>
         </div>
-        <div className="flex flex-col h-screen justify-center items-center">
+
+        <div className="bg-black flex flex-col h-screen justify-center items-center">
+          <div className="flex justify-center text-red-700 font-bold underline text-2xl mb-12 mt-12">
+            <h1>About</h1>
+          </div>
           <section
-            id="Home"
-            className=" text-white grid grid-cols-2 gap-4 ml-20 max-w-7xl"
+            id="About"
+            className="text-white grid grid-cols-2 gap-4 ml-20 max-w-7xl mt-24 mr-6"
           >
-            <div className="">
-              <h2 className="text-5xl font-bold">
-                Hi, <br></br>I'm <span className="text-red-700">David</span>
-                <br></br>
-                <TypeAnimation
-                  sequence={["React.js Developer", 500, "Java Developer", 500]}
-                  speed={40}
-                  repeat={Infinity}
+            <div>
+              <img src="/logo.png" alt="logo" className="invert ml-12" />
+            </div>
+            <div>
+              <p>
+                Hello, <br></br>Hard working software engineering student from
+                Zenica in my third and final year. I'm also a former Pharmacy
+                technician and a future full stack developer. I’ve found my
+                passion in web development. I love spending time coding and
+                encountering new challenges. I’m highly adaptable to new
+                challenges and projects. I'm a Junior Scholar at Bosnia and
+                Herzegovina Futures foundation and that is the best thing that
+                happened to me.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <div className="bg-black flex flex-col h-screen justify-center items-center">
+          <div className="flex justify-center text-red-700 font-bold underline text-2xl mb-12">
+            <h1>Skills</h1>
+          </div>
+          <section
+            id="Skills"
+            className="text-white grid grid-cols-2 gap-4 ml-20 max-w-7xl"
+          >
+            {/* TAILWIND */}
+
+            <div className="mr-10 flex items-center">
+              <div className="mr-2">
+                <img
+                  src="/tailwind-css.svg"
+                  alt="logo"
+                  className="invert w-10"
                 />
-              </h2>
+              </div>
+              <div className="text-white">
+                <h1 className="pt-2 sm:pt-5">TAILWIND</h1>
+                <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
+                  <div className="h-full bg-red-700 absolute w-full"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Javascript */}
+            <div className="mr-10 flex items-center">
+              <div className="mr-2">
+                <img
+                  src="/tailwind-css.svg"
+                  alt="logo"
+                  className="invert w-10"
+                />
+              </div>
+              <div className="text-white">
+                <h1 className="pt-2 sm:pt-5">Javascript</h1>
+                <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
+                  <div className="h-full bg-red-700 absolute w-full"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* React.js */}
+
+            <div className="mr-10 flex items-center">
+              <div className="mr-2">
+                <img
+                  src="/tailwind-css.svg"
+                  alt="logo"
+                  className="invert w-10"
+                />
+              </div>
+              <div className="text-white">
+                <h1 className="pt-2 sm:pt-5">React.js</h1>
+                <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
+                  <div className="h-full bg-red-700 absolute w-full"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Java */}
+            <div className="mr-10 flex items-center">
+              <div className="mr-2">
+                <img
+                  src="/tailwind-css.svg"
+                  alt="logo"
+                  className="invert w-10"
+                />
+              </div>
+              <div className="text-white">
+                <h1 className="pt-2 sm:pt-5">Java</h1>
+                <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
+                  <div className="h-full bg-red-700 absolute w-full"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Sping Boot */}
+
+            <div className="mr-10 flex items-center">
+              <div className="mr-2">
+                <img
+                  src="/tailwind-css.svg"
+                  alt="logo"
+                  className="invert w-10"
+                />
+              </div>
+              <div className="text-white">
+                <h1 className="pt-2 sm:pt-5">Spring Boot</h1>
+                <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
+                  <div className="h-full bg-red-700 absolute w-full"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Spring Security */}
+            <div className="mr-10 flex items-center">
+              <div className="mr-2">
+                <img
+                  src="/tailwind-css.svg"
+                  alt="logo"
+                  className="invert w-10"
+                />
+              </div>
+              <div className="text-white">
+                <h1 className="pt-2 sm:pt-5">Spring Security</h1>
+                <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
+                  <div className="h-full bg-red-700 absolute w-full"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div className="bg-black flex flex-col h-screen justify-center items-center">
+          <div className="flex justify-center text-red-700 font-bold underline text-2xl mb-12 mt-12">
+            <h1>Projects</h1>
+          </div>
+          <section id="Projects" className="text-white grid ">
+            <div className="grid grid-cols-3 gap-4 grid grid-cols-2 gap-4 max-w-7xl space-x-4 overflow-hidden">
+              <Link
+                to={{
+                  pathname:
+                    "https://github.com/CodecoolGlobal/solar-watch-MVP-java-DaveMorin35.git",
+                }}
+                target="_blank"
+              >
+                <img
+                  src="Weather.png"
+                  alt="weather"
+                  className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
+                />
+              </Link>
+              <Link to={{ pathname: "https://wallner.bio/" }} target="_blank">
+                <img
+                  src="Wallner.png"
+                  alt="wallner"
+                  className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
+                />
+              </Link>
+              <Link
+                to={{ pathname: "https://github.com/DaveMorin35/Movie.git" }}
+                target="_blank"
+              >
+                <img
+                  src="Movies.png"
+                  alt="movies"
+                  className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
+                />
+              </Link>
+            </div>
+            <div className="flex justify-center">
               <button
                 type="button"
                 className="rounded-lg bg-red-700 px-4 py-1 mt-10"
               >
-                Contact
+                Download CV
               </button>
-            </div>
-            <div className="ml-48">
-              <img src="/logo.png" alt="logo" className="invert ml-12" />
             </div>
           </section>
         </div>
-      </div>
 
-      <div className="bg-black flex flex-col h-screen justify-center items-center">
-        <div className="flex justify-center text-red-700 font-bold underline text-2xl mb-12 mt-12">
-          <h1>About</h1>
+        <div className="bg-black flex flex-col h-screen justify-center items-center">
+          <div className="flex justify-center text-red-700 font-bold underline text-2xl mb-12 mt-12">
+            <h1>Contact</h1>
+          </div>
+          <section id="Contact" className="">
+            <form ref={form} onSubmit={handleSubmit} className="grid min-w-96">
+              <input
+                type="text"
+                placeholder="Name"
+                name="name"
+                className="rounded-lg mb-4 py-1 pl-4 text-black"
+                value={formData.name}
+                onChange={handleChange}
+              ></input>
+              <input
+                type="email"
+                placeholder="E-Mail"
+                name="email"
+                className="rounded-lg mb-4 py-1 pl-4"
+                value={formData.email}
+                onChange={handleChange}
+              ></input>
+              <textarea
+                type="message"
+                placeholder="Message"
+                name="message"
+                className="rounded-lg mb-4 min-h-56 py-1 pl-4"
+                value={formData.message}
+                onChange={handleChange}
+              ></textarea>
+              <button
+                type="submit"
+                className="rounded-lg bg-red-700 px-4 py-1 mt-10"
+              >
+                Submit
+              </button>
+            </form>
+          </section>
         </div>
-        <section
-          id="About"
-          className="text-white grid grid-cols-2 gap-4 ml-20 max-w-7xl mt-24 mr-6"
-        >
-          <div>
-            <img src="/logo.png" alt="logo" className="invert ml-12" />
-          </div>
-          <div>
-            <p>
-              Hello, <br></br>Hard working software engineering student from
-              Zenica in my third and final year. I'm also a former Pharmacy
-              technician and a future full stack developer. I’ve found my
-              passion in web development. I love spending time coding and
-              encountering new challenges. I’m highly adaptable to new
-              challenges and projects. I'm a Junior Scholar at Bosnia and
-              Herzegovina Futures foundation and that is the best thing that
-              happened to me.
-            </p>
-          </div>
-        </section>
-      </div>
-
-      <div className="bg-black flex flex-col h-screen justify-center items-center">
-        <div className="flex justify-center text-red-700 font-bold underline text-2xl mb-12">
-          <h1>Skills</h1>
-        </div>
-        <section
-          id="Skills"
-          className="text-white grid grid-cols-2 gap-4 ml-20 max-w-7xl"
-        >
-          {/* TAILWIND */}
-
-          <div className="mr-10 flex items-center">
-            <div className="mr-2">
-              <img src="/tailwind-css.svg" alt="logo" className="invert w-10" />
-            </div>
-            <div className="text-white">
-              <h1 className="pt-2 sm:pt-5">TAILWIND</h1>
-              <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
-                <div className="h-full bg-red-700 absolute w-full"></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Javascript */}
-          <div className="mr-10 flex items-center">
-            <div className="mr-2">
-              <img src="/tailwind-css.svg" alt="logo" className="invert w-10" />
-            </div>
-            <div className="text-white">
-              <h1 className="pt-2 sm:pt-5">Javascript</h1>
-              <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
-                <div className="h-full bg-red-700 absolute w-full"></div>
-              </div>
-            </div>
-          </div>
-
-          {/* React.js */}
-
-          <div className="mr-10 flex items-center">
-            <div className="mr-2">
-              <img src="/tailwind-css.svg" alt="logo" className="invert w-10" />
-            </div>
-            <div className="text-white">
-              <h1 className="pt-2 sm:pt-5">React.js</h1>
-              <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
-                <div className="h-full bg-red-700 absolute w-full"></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Java */}
-          <div className="mr-10 flex items-center">
-            <div className="mr-2">
-              <img src="/tailwind-css.svg" alt="logo" className="invert w-10" />
-            </div>
-            <div className="text-white">
-              <h1 className="pt-2 sm:pt-5">Java</h1>
-              <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
-                <div className="h-full bg-red-700 absolute w-full"></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Sping Boot */}
-
-          <div className="mr-10 flex items-center">
-            <div className="mr-2">
-              <img src="/tailwind-css.svg" alt="logo" className="invert w-10" />
-            </div>
-            <div className="text-white">
-              <h1 className="pt-2 sm:pt-5">Spring Boot</h1>
-              <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
-                <div className="h-full bg-red-700 absolute w-full"></div>
-              </div>
-            </div>
-          </div>
-
-          {/* Spring Security */}
-          <div className="mr-10 flex items-center">
-            <div className="mr-2">
-              <img src="/tailwind-css.svg" alt="logo" className="invert w-10" />
-            </div>
-            <div className="text-white">
-              <h1 className="pt-2 sm:pt-5">Spring Security</h1>
-              <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
-                <div className="h-full bg-red-700 absolute w-full"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <div className="bg-black flex flex-col h-screen justify-center items-center">
-        <div className="flex justify-center text-red-700 font-bold underline text-2xl mb-12 mt-12">
-          <h1>Projects</h1>
-        </div>
-        <section id="Projects" className="text-white grid ">
-          <div className="grid grid-cols-3 gap-4 grid grid-cols-2 gap-4 max-w-7xl space-x-4 overflow-hidden">
-            <Link
-              to={{
-                pathname:
-                  "https://github.com/CodecoolGlobal/solar-watch-MVP-java-DaveMorin35.git",
-              }}
-              target="_blank"
-            >
-              <img
-                src="Weather.png"
-                alt="weather"
-                className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
-              />
-            </Link>
-            <Link to={{ pathname: "https://wallner.bio/" }} target="_blank">
-              <img
-                src="Wallner.png"
-                alt="wallner"
-                className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
-              />
-            </Link>
-            <Link
-              to={{ pathname: "https://github.com/DaveMorin35/Movie.git" }}
-              target="_blank"
-            >
-              <img
-                src="Movies.png"
-                alt="movies"
-                className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
-              />
-            </Link>
-          </div>
-          <div className="flex justify-center">
-            <button
-              type="button"
-              className="rounded-lg bg-red-700 px-4 py-1 mt-10"
-            >
-              Download CV
-            </button>
-          </div>
-        </section>
-      </div>
-
-      <div className="bg-black flex flex-col h-screen justify-center items-center">
-        <div className="flex justify-center text-red-700 font-bold underline text-2xl mb-12 mt-12">
-          <h1>Contact</h1>
-        </div>
-        <section id="Contact" className="">
-          <form onSubmit={handleSubmit} className="grid min-w-96">
-            <input
-              type="text"
-              placeholder="Name"
-              name="name"
-              className="rounded-lg mb-4 py-1 pl-4 text-black"
-              value={formData.name}
-              onChange={handleChange}
-            ></input>
-            <input
-              type="email"
-              placeholder="E-Mail"
-              name="email"
-              className="rounded-lg mb-4 py-1 pl-4"
-              value={formData.email}
-              onChange={handleChange}
-            ></input>
-            <textarea 
-            type="message" 
-            placeholder="Message"
-            name="message"
-            className="rounded-lg mb-4 min-h-56 py-1 pl-4"
-            value={formData.message}
-            onChange={handleChange}
-            ></textarea>
-            <button type="submit" className="rounded-lg bg-red-700 px-4 py-1 mt-10">Submit</button>
-          </form>
-        </section>
-        </div>
-      <Footer/>
+        <Footer />
       </div>
     </>
   );

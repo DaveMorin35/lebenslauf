@@ -1,7 +1,6 @@
 import React from "react";
 import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
-import ParticlesBackground from "./components/ParticleBg";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './pages/Layout';
 import ErrorPage from './pages/ErrorPage';
@@ -21,10 +20,6 @@ const router = createBrowserRouter([
               path:'/home',
               element: <Home />
             },
-            {
-              path:'/particle',
-              element: <ParticlesBackground />
-            }
         ],
 },
 ]);

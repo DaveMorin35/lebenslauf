@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 
 export default function Projects() {
 
@@ -13,6 +13,7 @@ export default function Projects() {
                   <a
                     href="https://github.com/CodecoolGlobal/solar-watch-MVP-java-DaveMorin35.git"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <img
                       src="Weather.png"
@@ -23,6 +24,7 @@ export default function Projects() {
                   <a
                     href="https://wallner.bio/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <img
                       src="Wallner.png"
@@ -33,6 +35,7 @@ export default function Projects() {
                   <a
                     href="https://github.com/DaveMorin35/Movie.git"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <img
                       src="Movies.png"

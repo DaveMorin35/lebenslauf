@@ -25,7 +25,7 @@ export default function Menu() {
   return (
     <>
       <nav className="bg-[#1F1F1F] flex justify-between items-center w-full p-4 fixed z-10">
-        <a href="#" className="h-10 w-10 invert ml-20 cursor-pointer" onClick={handleLogoClick}>
+        <a className="h-10 w-10 invert ml-20 cursor-pointer" onClick={handleLogoClick}>
           <img src="/logo.png" alt="logo" />
         </a>
         <div className="mr-10 font-bold">

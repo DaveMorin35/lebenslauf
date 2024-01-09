@@ -58,12 +58,15 @@ export default function Home() {
                       <a
                       href="https://www.linkedin.com/in/david-morin-b57343291"
                       target="_blank"
+                      rel="noreferrer"
                       >
                       <img src="linkedin.png" alt="linkedin" className="invert  w-6"/>
                         </a>
                         <a
                         href="https://github.com/DaveMorin35"
-                        target="_blank">
+                        target="_blank"
+                        rel="noreferrer"
+                        >
                       <img src="github.png" alt="github" className="invert ml-6 w-6"/>
                       </a>
                     </div>

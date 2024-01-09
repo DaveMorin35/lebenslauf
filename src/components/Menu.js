@@ -77,7 +77,7 @@ export default function Menu() {
               <Link
                 to="Projects"
                 smooth={true}
-                offset={-200}
+                offset={-250}
                 duration={500}
                 className={`hover:text-red-400 cursor-pointer ${
                   activeItem === 3 ? "text-red-400" : ""

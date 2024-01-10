@@ -40,7 +40,7 @@ export default function Welcome() {
     <>
       <div className="bg-black min-h-screen items-center flex flex-col">
         <div className="text-4xl text-white flex flex-grow flex-col justify-center">
-          <Typewriter text="Welcome" speed={100} onComplete={handleHomePage} />
+          <Typewriter text="Welcome" speed={200} onComplete={handleHomePage} />
         </div>
       </div>
     </>

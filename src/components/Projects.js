@@ -11,7 +11,7 @@ export default function Projects() {
               <section id="Projects" className="text-white grid ">
                 <div className="grid grid-cols-3 gap-4 grid grid-cols-2 gap-4 max-w-7xl space-x-4 overflow-hidden">
                   <a
-                    href="https://github.com/CodecoolGlobal/solar-watch-MVP-java-DaveMorin35.git"
+                    href="https://github.com/DaveMorin35/WeatherApp.git"
                     target="_blank"
                     rel="noreferrer"
                   >

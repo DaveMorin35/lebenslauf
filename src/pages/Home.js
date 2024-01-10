@@ -24,13 +24,13 @@ export default function Home() {
               <div className="flex flex-col h-screen justify-center items-center">
                 <section
                   id="Home"
-                  className=" text-white grid grid-cols-2 gap-4 ml-20 max-w-7xl"
+                  className="text-white grid md:grid-cols-2 sm:grid-cols-1 gap-4 ml-20"
                 >
-                   <div className="mr-48 w-96">
+                   <div className="md:mr-40 w-60 md:w-72 lg:w-96 sm:w-64 md:ml-20">
                     <img src="/Morin.png" alt="logo" className="" />
                   </div>
-                  <div className="ml-24 mt-16">
-                    <h2 className="text-5xl font-bold">
+                  <div className="ml-4 mt-12 md:ml-20">
+                    <h2 className=" md:text-2xl lg:text-5xl font-bold sm:ml-16 md:ml-0">
                       Hi, <br></br>I'm{" "}
                       <span className="text-red-700">David</span>
                       <br></br>
@@ -50,11 +50,11 @@ export default function Home() {
                     <a
                       type="button"
                       href="#Contact"
-                      className="rounded-lg bg-red-700 px-4 py-1 mt-10"
+                      className="rounded-lg bg-red-700 px-4 py-1 mt-10 sm:ml-16 md:ml-0"
                     >
                       Contact
                     </a>
-                    <div className="flex mt-6">
+                    <div className="flex mt-6 md:justify-normal sm:justify-center">
                       <a
                       href="https://www.linkedin.com/in/david-morin-b57343291"
                       target="_blank"

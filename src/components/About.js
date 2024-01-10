@@ -26,15 +26,16 @@ const handleCv = () => {
 }
   return (
     <>
-      <div className="bg-black flex flex-col h-screen justify-center items-center">
+      <div className="bg-black flex flex-col h-screen justify-center items-center mt-24 sm:mt-0">
         <div className="flex justify-center text-red-700 font-bold underline text-2xl mb-12 mt-12">
           <h1>About</h1>
         </div>
         <section
           id="About"
-          className="text-white grid grid-cols-2 gap-4 max-w-5xl mt-24 mr-6"
+          className="text-white grid justify-items-center md:grid-cols-2 sm:grid-cols-1 sm:justify-items-center gap-4 max-w-5xl mt-24 mr-6 sm:text-sm sm:ml-10"
         >
           <div>
+            <div className="mx-12 sm:ml-2">
             <p>
               Hello, <br></br>As a recently certified full-stack developer specializing in modern web applications, 
               I bring a current and innovative perspective to the field. 
@@ -42,8 +43,8 @@ const handleCv = () => {
               Fueled by a passion for code excellence and streamlined solutions, 
               I am excited to explore new technologies and actively contribute to innovative projects.
             </p>
-
-            <div className="flex justify-center">
+            </div>
+            <div className="flex justify-center  text-sm lg:text-sm">
               <button
                 type="button"
                 className="rounded-lg bg-red-700 px-4 py-1 mt-10 mr-6"
@@ -60,8 +61,8 @@ const handleCv = () => {
               </button>
             </div>
           </div>
-          <div className="ml-32">
-            <img src="/Morin.jpg" alt="logo" className="ml-12 rounded-xl w-64" />
+          <div className="w-40 sm:w-60 md:w-72 lg:w.96 mt-20 sm:mt-12 lg:ml-0">
+            <img src="/Morin.jpg" alt="logo" className="rounded-xl lg:w-64 md:w-48" />
           </div>
         </section>
       </div>

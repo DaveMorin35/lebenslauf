@@ -5,12 +5,19 @@ export default function Skills() {
         <div className="flex text-red-700 font-bold underline text-2xl mb-12">
           <h1>Skills</h1>
         </div>
-        <section id="Skills" className="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
+        <section
+          id="Skills"
+          className="text-white grid grid-cols-1 md:grid-cols-2 gap-4 "
+        >
           {/* TAILWIND */}
 
           <div className="mr-10 flex items-center">
             <div className="mr-2">
-              <img src="/tailwind-css.svg" alt="logo" className="invert w-8" />
+              <img
+                src="/tailwind-css.svg"
+                alt="logo"
+                className="invert w-6 sm:w-8"
+              />
             </div>
             <div className="text-white">
               <h1 className="pt-2 sm:pt-5">Tailwind</h1>
@@ -23,7 +30,11 @@ export default function Skills() {
           {/* Javascript */}
           <div className="mr-10 flex items-center ">
             <div className="mr-2 ">
-              <img src="/javascript.png" alt="logo" className="invert w-8" />
+              <img
+                src="/javascript.png"
+                alt="logo"
+                className="invert w-6 sm:w-8"
+              />
             </div>
             <div className="text-white">
               <h1 className="pt-2 sm:pt-5">Javascript</h1>
@@ -37,7 +48,7 @@ export default function Skills() {
 
           <div className="mr-10 flex items-center">
             <div className="mr-2">
-              <img src="/react.png" alt="logo" className="invert w-8" />
+              <img src="/react.png" alt="logo" className="invert w-6 sm:w-8" />
             </div>
             <div className="text-white">
               <h1 className="pt-2 sm:pt-5">React.js</h1>
@@ -50,7 +61,7 @@ export default function Skills() {
           {/* Java */}
           <div className="mr-10 flex items-center">
             <div className="mr-2">
-              <img src="/java.png" alt="logo" className="invert w-8" />
+              <img src="/java.png" alt="logo" className="invert w-6 sm:w-8" />
             </div>
             <div className="text-white">
               <h1 className="pt-2 sm:pt-5">Java</h1>
@@ -64,7 +75,11 @@ export default function Skills() {
 
           <div className="mr-10 flex items-center">
             <div className="mr-2">
-              <img src="/spring-boot.png" alt="logo" className="invert w-8" />
+              <img
+                src="/spring-boot.png"
+                alt="logo"
+                className="invert w-6 sm:w-8"
+              />
             </div>
             <div className="text-white">
               <h1 className="pt-2 sm:pt-5">Spring Boot</h1>
@@ -80,7 +95,7 @@ export default function Skills() {
               <img
                 src="/springsecurity.png"
                 alt="logo"
-                className="invert w-8"
+                className="invert w-6 sm:w-8"
               />
             </div>
             <div className="text-white">
@@ -94,7 +109,7 @@ export default function Skills() {
           {/* SQL*/}
           <div className="mr-10 flex items-center">
             <div className="mr-2">
-              <img src="/sql.png" alt="logo" className="invert w-8" />
+              <img src="/sql.png" alt="logo" className="invert w-6 sm:w-8" />
             </div>
             <div className="text-white">
               <h1 className="pt-2 sm:pt-5">Sql</h1>
@@ -107,7 +122,7 @@ export default function Skills() {
           {/* GIT */}
           <div className="mr-10 flex items-center">
             <div className="mr-2">
-              <img src="/github.png" alt="logo" className="invert w-8" />
+              <img src="/github.png" alt="logo" className="invert w-6 sm:w-8" />
             </div>
             <div className="text-white">
               <h1 className="pt-2 sm:pt-5">Git</h1>
@@ -120,7 +135,11 @@ export default function Skills() {
           {/* Wordpress */}
           <div className="mr-10 flex items-center">
             <div className="mr-2">
-              <img src="/wordpress.png" alt="logo" className="invert w-8" />
+              <img
+                src="/wordpress.png"
+                alt="logo"
+                className="invert w-6 sm:w-8"
+              />
             </div>
             <div className="text-white">
               <h1 className="pt-2 sm:pt-5">Wordpress</h1>
@@ -133,7 +152,7 @@ export default function Skills() {
           {/* Css3*/}
           <div className="mr-10 flex items-center">
             <div className="mr-2">
-              <img src="/css3.png" alt="logo" className="invert w-8" />
+              <img src="/css3.png" alt="logo" className="invert w-6 sm:w-8" />
             </div>
             <div className="text-white">
               <h1 className="pt-2 sm:pt-5">Css3</h1>

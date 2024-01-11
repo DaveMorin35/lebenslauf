@@ -1,22 +1,19 @@
 import React, { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Link, animateScroll as scroll } from "react-scroll";
-
 
 export default function Menu() {
   const [activeItem, setActiveItem] = useState(null);
   const navigate = useNavigate();
 
-
   const handleItemClick = (index) => {
     setActiveItem(index);
-    
   };
 
   const handleLogoClick = () => {
-    navigate("/")
+    navigate("/");
     scrollToTop();
-  }
+  };
 
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -24,14 +21,19 @@ export default function Menu() {
 
   return (
     <>
-      <nav className="bg-[#1F1F1F] flex justify-between items-center w-full p-4 fixed z-10">
-        <button className="h-10 w-10 invert ml-20 cursor-pointer" onClick={handleLogoClick}>
-          <img src="/logo.png" alt="logo" />
-        </button>
-        <div className="mr-10 font-bold">
-          <ul className="text-gray-200 flex space-x-4">
+      <nav className="bg-[#1F1F1F] flex flex-col md:flex-row justify-between items-center w-full p-4 fixed z-10">
+        <div className="md:w-1/2 md:text-left md:ml-18">
+          <button
+            className="h-10 w-10 invert ml-20 cursor-pointer"
+            onClick={handleLogoClick}
+          >
+            <img src="/logo.png" alt="logo" />
+          </button>
+        </div>
+        <div className="md:w1/2 md:mr-10 font-bold mt-4 md:mt">
+          <ul className="text-gray-200 text-sm md:text-xl flex space-x-4">
             <li>
-            <Link
+              <Link
                 to="Home"
                 smooth={true}
                 offset={-200}
@@ -46,7 +48,7 @@ export default function Menu() {
             </li>
 
             <li>
-            <Link
+              <Link
                 to="About"
                 smooth={true}
                 offset={-300}
@@ -60,7 +62,7 @@ export default function Menu() {
               </Link>
             </li>
             <li>
-            <Link
+              <Link
                 to="Skills"
                 smooth={true}
                 offset={-200}
@@ -107,5 +109,3 @@ export default function Menu() {
     </>
   );
 }
-
-/* changer <a> avec Link */

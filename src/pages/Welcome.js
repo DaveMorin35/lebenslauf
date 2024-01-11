@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Typewriter = ({ text, speed, onComplete }) => {
-  const [displayedText, setDisplayedText] = useState('');
+  const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
   const navigate = useNavigate();
 
@@ -20,20 +20,20 @@ const Typewriter = ({ text, speed, onComplete }) => {
   useEffect(() => {
     if (index === text.length) {
       onComplete && onComplete();
-      navigate('/home');
+      navigate("/home");
     }
   }, [index, text, onComplete, navigate]);
 
   return <span>{displayedText}</span>;
 };
 
-export default function Welcome() {
+const Welcome = () => {
   const [showHomePage, setShowHomePage] = useState(false);
   const navigate = useNavigate();
 
   const handleHomePage = () => {
     setShowHomePage(true);
-    navigate('/home');
+    navigate("/home");
   };
 
   return (
@@ -45,4 +45,6 @@ export default function Welcome() {
       </div>
     </>
   );
-}
+};
+
+export default Welcome;

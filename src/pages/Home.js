@@ -7,13 +7,13 @@ import Skills from "../components/Skills";
 import About from "../components/About";
 import Projects from "../components/Projects";
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <AnimatePresence>
         <motion.div
           className="bg-black flex flex-col min-h-screen"
-          initial={{  opacity: 0}}
+          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 2, ease: [0.22, 1, 0.36, 1] }}
@@ -26,7 +26,7 @@ export default function Home() {
                   id="Home"
                   className="text-white grid md:grid-cols-2 sm:grid-cols-1 gap-4 ml-20"
                 >
-                   <div className="md:mr-40 w-60 md:w-72 lg:w-96 sm:w-64 md:ml-20">
+                  <div className="md:mr-40 w-60 md:w-72 lg:w-96 sm:w-64 md:ml-20">
                     <img src="/Morin.png" alt="logo" className="" />
                   </div>
                   <div className="ml-4 mt-12 md:ml-20">
@@ -56,18 +56,26 @@ export default function Home() {
                     </a>
                     <div className="flex mt-6 md:justify-normal sm:justify-center">
                       <a
-                      href="https://www.linkedin.com/in/david-morin-b57343291"
-                      target="_blank"
-                      rel="noreferrer"
+                        href="https://www.linkedin.com/in/david-morin-b57343291"
+                        target="_blank"
+                        rel="noreferrer"
                       >
-                      <img src="linkedin.png" alt="linkedin" className="invert  w-6"/>
-                        </a>
-                        <a
+                        <img
+                          src="linkedin.png"
+                          alt="linkedin"
+                          className="invert  w-6"
+                        />
+                      </a>
+                      <a
                         href="https://github.com/DaveMorin35"
                         target="_blank"
                         rel="noreferrer"
-                        >
-                      <img src="github.png" alt="github" className="invert ml-6 w-6"/>
+                      >
+                        <img
+                          src="github.png"
+                          alt="github"
+                          className="invert ml-6 w-6"
+                        />
                       </a>
                     </div>
                   </div>
@@ -84,4 +92,6 @@ export default function Home() {
       </AnimatePresence>
     </>
   );
-}
+};
+
+export default Home;

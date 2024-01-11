@@ -5,7 +5,7 @@ export default function Skills() {
         <div className="flex text-red-700 font-bold underline text-2xl mb-12">
           <h1>Skills</h1>
         </div>
-        <section id="Skills" className="text-white grid grid-cols-2 gap-4">
+        <section id="Skills" className="text-white grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* TAILWIND */}
 
           <div className="mr-10 flex items-center">

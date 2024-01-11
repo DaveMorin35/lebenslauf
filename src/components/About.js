@@ -35,8 +35,8 @@ const handleCv = () => {
           className="text-white grid justify-items-center md:grid-cols-2 sm:grid-cols-1 sm:justify-items-center gap-4 max-w-5xl mt-24 mr-6 sm:text-sm sm:ml-10"
         >
           <div>
-            <div className="mx-12 sm:ml-2">
-            <p>
+            <div className="mx-10 sm:ml-2">
+            <p className="sm:text-lg text-center md:text-left">
               Hello, <br></br>As a recently certified full-stack developer specializing in modern web applications, 
               I bring a current and innovative perspective to the field. 
               My comprehensive training has provided me with a strong base in diverse technology stacks, positioning me for success in dynamic project environments. 
@@ -44,7 +44,7 @@ const handleCv = () => {
               I am excited to explore new technologies and actively contribute to innovative projects.
             </p>
             </div>
-            <div className="flex justify-center  text-sm lg:text-sm">
+            <div className="flex justify-center n text-sm lg:text-sm">
               <button
                 type="button"
                 className="rounded-lg bg-red-700 px-4 py-1 mt-10 mr-6"
@@ -61,7 +61,7 @@ const handleCv = () => {
               </button>
             </div>
           </div>
-          <div className="w-40 sm:w-60 md:w-72 lg:w.96 mt-20 sm:mt-12 lg:ml-0">
+          <div className="w-40 sm:w-60  lg:w.96 mt-20 sm:mt-12 lg:ml-0">
             <img src="/Morin.jpg" alt="logo" className="rounded-xl lg:w-64 md:w-48" />
           </div>
         </section>

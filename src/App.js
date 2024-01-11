@@ -20,6 +20,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
 
+]);
 
 const App = () => (
   <React.StrictMode>

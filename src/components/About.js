@@ -1,29 +1,27 @@
-
 export default function About() {
+  const handleCertificateDownload = () => {
+    const certificateFile = "Zertifikat.pdf";
 
-const handleCertificateDownload = () => {
-  const certificateFile = "Zertifikat.pdf";
+    const link = document.createElement("a");
+    link.href = certificateFile;
+    link.target = "_blank";
+    link.download = "Zertifikat.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
-  const link = document.createElement("a");
-  link.href = certificateFile;
-  link.target = '_blank';
-  link.download = 'Zertifikat.pdf';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+  const handleCv = () => {
+    const CvFile = "cv_DavidMorin.pdf";
 
-const handleCv = () => {
-  const CvFile = "cv_DavidMorin.pdf";
-
-  const link = document.createElement("a");
-  link.href = CvFile;
-  link.target= "_blank";
-  link.download = "cv_DavidMorin";
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
+    const link = document.createElement("a");
+    link.href = CvFile;
+    link.target = "_blank";
+    link.download = "cv_DavidMorin";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <>
       <div className="bg-black flex flex-col h-screen justify-center items-center mt-24 sm:mt-0">
@@ -36,13 +34,16 @@ const handleCv = () => {
         >
           <div>
             <div className="mx-10 sm:ml-2">
-            <p className="text-sm sm:text-lg text-center md:text-left">
-              Hello, <br></br>As a recently certified full-stack developer specializing in modern web applications, 
-              I bring a current and innovative perspective to the field. 
-              My comprehensive training has provided me with a strong base in diverse technology stacks, positioning me for success in dynamic project environments. 
-              Fueled by a passion for code excellence and streamlined solutions, 
-              I am excited to explore new technologies and actively contribute to innovative projects.
-            </p>
+              <p className="text-sm sm:text-lg text-center md:text-left">
+                Hello, <br></br>As a recently certified full-stack developer
+                specializing in modern web applications, I bring a current and
+                innovative perspective to the field. My comprehensive training
+                has provided me with a strong base in diverse technology stacks,
+                positioning me for success in dynamic project environments.
+                Fueled by a passion for code excellence and streamlined
+                solutions, I am excited to explore new technologies and actively
+                contribute to innovative projects.
+              </p>
             </div>
             <div className="flex justify-center n text-sm lg:text-sm">
               <button
@@ -61,7 +62,7 @@ const handleCv = () => {
               </button>
             </div>
           </div>
-          <div className="w-32  md:w-48 lg:w-72 mt-20 sm:mt-12 lg:ml-0">
+          <div className="w-32  md:w-48 lg:w-64 mt-20 sm:mt-12 lg:ml-0 mb-32">
             <img src="/Morin.jpg" alt="logo" className="rounded-xl " />
           </div>
         </section>

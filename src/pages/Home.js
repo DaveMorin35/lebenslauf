@@ -1,13 +1,20 @@
 import Menu from "../components/Menu";
 import { TypeAnimation } from "react-type-animation";
 import { motion, AnimatePresence } from "framer-motion";
+import { Navigate } from 'react-router-dom';
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
 import Skills from "../components/Skills";
 import About from "../components/About";
 import Projects from "../components/Projects";
 
-const Home = () => {
+const Home = ({shouldRedirect}) => {
+if(shouldRedirect){
+  return <Navigate to="/"/>;
+
+}
+
+
   return (
     <>
       <AnimatePresence>

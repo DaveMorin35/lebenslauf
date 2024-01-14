@@ -1,30 +1,21 @@
-import React from "react";
-import Welcome from "./pages/Welcome";
-import Home from "./pages/Home";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./pages/Layout";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <Welcome />,
-      },
-      {
-        path: "/home",
-        element: <Home />,
-      },
-    ],
-  },
-]);
+import React from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Welcome from './pages/Welcome';
+import Home from './pages/Home';
+import Layout from './pages/Layout';
 
 const App = () => (
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <Router basename='/'>
+    <Routes>
+      <Route
+        path="/"
+        element={<Layout />}
+      >
+        <Route index element={<Welcome />} />
+        <Route path="home" element={<Home />} />
+      </Route>
+    </Routes>
+  </Router>
 );
 
 export default App;

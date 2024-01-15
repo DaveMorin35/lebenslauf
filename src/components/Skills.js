@@ -2,7 +2,7 @@ export default function Skills() {
   return (
     <>
       <div className="bg-black flex flex-col h-screen justify-center items-center">
-        <div className="flex text-red-700 font-bold underline text-2xl mb-12">
+        <div className="flex text-red-700 font-bold underline text-3xl mb-12">
           <h1>Skills</h1>
         </div>
         <section

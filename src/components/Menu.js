@@ -36,7 +36,7 @@ export default function Menu() {
         >
           <img src="/logo.png" alt="logo" />
         </button>
-        <div className={`mr-10 font-bold  ${isMenuOpen ? "hidden" : "block"}`}>
+        <div className={`mr-10 font-bold text-lg ${isMenuOpen ? "hidden" : "block"}`}>
           <ul
             className={`text-gray-200 flex space-x-4 ${
               isMenuOpen ? "flex-col" : "flex-row"

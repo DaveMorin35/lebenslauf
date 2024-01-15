@@ -51,14 +51,14 @@ export default function Contact () {
     return (
         <>
         <div className="bg-black flex flex-col h-screen justify-center items-center">
-              <div className="flex justify-center text-red-700 font-bold underline text-2xl mb-12 mt-12">
+              <div className="flex justify-center text-red-700 font-bold underline text-3xl mb-12 mt-12">
                 <h1>Contact</h1>
               </div>
               <section id="Contact" className="">
                 <form
                   ref={form}
                   onSubmit={handleSubmit}
-                  className="grid min-w-96"
+                  className="grid min-w-80"
                 >
                   <input
                     type="text"

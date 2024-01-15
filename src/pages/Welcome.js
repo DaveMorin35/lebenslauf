@@ -17,24 +17,13 @@ const Typewriter = ({ text, speed, onComplete }) => {
     };
   }, [text, index, speed]);
 
-  useEffect(() => {
-    if (index === text.length) {
-      onComplete && onComplete();
-      navigate("/home");
-    }
-  }, [index, text, onComplete, navigate]);
-
-  return <span>{displayedText}</span>;
-};
+}
 
 const Welcome = () => {
-  const [showHomePage, setShowHomePage] = useState(false);
-  const navigate = useNavigate();
+  
 
-  const handleHomePage = () => {
-    setShowHomePage(true);
-    navigate("/home");
-  };
+ 
+
 
   return (
     <>

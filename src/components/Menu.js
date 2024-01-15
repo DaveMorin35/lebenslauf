@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 export default function Menu() {
   const [activeItem, setActiveItem] = useState(null);
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate();
 
   const handleItemClick = (index) => {
     setActiveItem(index);
@@ -13,7 +11,6 @@ export default function Menu() {
   };
 
   const handleLogoClick = () => {
-    navigate("/");
     scrollToTop();
     closeMenu();
   };

@@ -1,5 +1,4 @@
 import React from "react";
-import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./pages/Layout";
@@ -11,16 +10,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Welcome />,
-      },
-      {
-        path: "/home",
         element: <Home />,
       },
-      {
-        path:"/*",
-        element: <Welcome />,
-      }
     ],
   },
 ]);

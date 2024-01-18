@@ -119,13 +119,13 @@ export default function Skills() {
             </div>
           </div>
 
-          {/* GIT */}
+          {/* MongoDB */}
           <div className="mr-10 flex items-center">
             <div className="mr-2">
-              <img src="/github.png" alt="logo" className="invert w-6 sm:w-8" />
+              <img src="/mongodb.png" alt="logo" className="invert w-6 sm:w-8" />
             </div>
             <div className="text-white">
-              <h1 className="pt-2 sm:pt-5">Git</h1>
+              <h1 className="pt-2 sm:pt-5">MongoDB</h1>
               <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
                 <div className="h-full bg-red-700 absolute w-full"></div>
               </div>
@@ -156,6 +156,32 @@ export default function Skills() {
             </div>
             <div className="text-white">
               <h1 className="pt-2 sm:pt-5">Css3</h1>
+              <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
+                <div className="h-full bg-red-700 absolute w-full"></div>
+              </div>
+            </div>
+          </div>
+
+            {/* Typescript*/}
+            <div className="mr-10 flex items-center">
+            <div className="mr-2">
+              <img src="/typescript.png" alt="logo" className="invert w-6 sm:w-8" />
+            </div>
+            <div className="text-white">
+              <h1 className="pt-2 sm:pt-5">Typescript</h1>
+              <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
+                <div className="h-full bg-red-700 absolute w-full"></div>
+              </div>
+            </div>
+          </div>
+
+            {/* Git*/}
+            <div className="mr-10 flex items-center">
+            <div className="mr-2">
+              <img src="/github.png" alt="logo" className="invert w-6 sm:w-8" />
+            </div>
+            <div className="text-white">
+              <h1 className="pt-2 sm:pt-5">Git</h1>
               <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
                 <div className="h-full bg-red-700 absolute w-full"></div>
               </div>

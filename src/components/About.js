@@ -1,27 +1,14 @@
 export default function About() {
   const handleCertificateDownload = () => {
-    const certificateFile = "Zertifikat.pdf";
-
-    const link = document.createElement("a");
-    link.href = certificateFile;
-    link.target = "_blank";
-    link.download = "Zertifikat.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const certificateFile = `${process.env.PUBLIC_URL}/Zertifikat.pdf`;
+    window.open(certificateFile, "_blank");
   };
 
   const handleCv = () => {
-    const CvFile = "cv_DavidMorin.pdf";
-
-    const link = document.createElement("a");
-    link.href = CvFile;
-    link.target = "_blank";
-    link.download = "cv_DavidMorin";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const CvFile = `${process.env.PUBLIC_URL}/CV.pdf`;
+    window.open(CvFile, "_blank");
   };
+
   return (
     <>
       <div className="bg-black flex flex-col h-screen justify-center items-center sm:mt-0">

@@ -1,21 +1,17 @@
 export default function About() {
 
-const downloadFile = (fileUrl) => {
-  const link = document.createElement('a');
-  link.href = fileUrl;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-}
+  const openFileInBrowser = (fileUrl) => {
+    window.open(fileUrl, '_blank');
+  };
 
   const handleCertificateDownload = () => {
     const certificateFile = `${process.env.PUBLIC_URL}/Zertifikat.pdf`;
-    downloadFile(certificateFile)
+    openFileInBrowser(certificateFile);
   };
 
   const handleCv = () => {
-    const CvFile = `${process.env.PUBLIC_URL}/CV.pdf`;
-    downloadFile(CvFile)
+    const cvFile = `${process.env.PUBLIC_URL}/CV.pdf`;
+    openFileInBrowser(cvFile);
   };
 
   return (

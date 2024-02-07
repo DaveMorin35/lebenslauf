@@ -44,7 +44,7 @@ const Home = () => {
   if (!showPage) {
     return (
       <div className="bg-black min-h-screen flex items-center">
-        <div className="text-4xl text-white flex flex-grow justify-center">
+        <div className="text-4xl flex flex-grow justify-center text-transparent bg-gradient-to-r from-red-400 via-red-700 to-red-900 bg-clip-text-webkit">
           <WelcomeText />
         </div>
       </div>
@@ -63,7 +63,7 @@ const Home = () => {
                 className="text-white grid md:grid-cols-2 sm:grid-cols-1 gap-4 ml-20"
               >
                 <div className="md:mr-40 w-60 md:w-72 lg:w-96 sm:w-64 md:ml-20">
-                  <img src="/Morin.png" alt="logo" className="" />
+                  <img src="/Morin.png" alt="logo" className="transform transition duration-500 hover:scale-110" />
                 </div>
                 <div className="ml-4 mt-12 md:ml-20">
                   <h2 className=" md:text-2xl lg:text-5xl font-bold sm:ml-16 md:ml-0">

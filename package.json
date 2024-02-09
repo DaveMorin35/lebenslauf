@@ -9,6 +9,7 @@
     "core-js": "^3.35.0",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^10.17.9",
+    "gsap": "^3.12.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.1",
@@ -44,8 +45,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "babel-preset-env": "^1.7.0",
-    "tailwindcss": "^3.4.0",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "tailwindcss": "^3.4.0"
   }
 }

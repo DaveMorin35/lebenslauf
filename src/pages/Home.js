@@ -1,6 +1,7 @@
 import { TypeAnimation } from "react-type-animation";
-import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
+import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import gsap from "gsap";
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
 import Skills from "../components/Skills";
@@ -8,52 +9,55 @@ import About from "../components/About";
 import Menu from "../components/Menu";
 import Projects from "../components/Projects";
 
-const WelcomeText = () => {
-  const word = "Welcome";
-  const [letters, setLetters] = useState([]);
-
-  useEffect(() => {
-    const letterElements = word.split("").map((letter, index) => (
-      <motion.span
-        key={index}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-      >
-        {letter}
-      </motion.span>
-    ));
-
-    setLetters(letterElements);
-  }, [word]);
-
-  return <>{letters}</>;
-};
-
 const Home = () => {
-  const [showPage, setShowPage] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false);
+  const comp = useRef(null);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPage(true);
-    }, 2000);
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const t1 = gsap.timeline();
 
-    return () => clearTimeout(timer);
+      t1.from("#intro-slider", {
+        xPercent: "-100",
+        duration: 0,
+        delay: 0.1,
+      })
+        .from(["#title-1", "#title-2", "#title-3"], {
+          opacity: 0,
+          y: "+=60",
+          delay:0.3,
+        })
+        .to(["#title-1", "#title-2", "#title-3"], {
+          opacity: 0,
+          y: "-=100",
+          delay: 0.8,
+        })
+        .to("#intro-slider", {
+          yPercent: "-100",
+          duration: 1.3,
+        })
+        .from("#welcome", {
+          opacity: 0,
+          duration: 0.5,
+          onComplete: () => setShowAnimation(true),
+        });
+    }, comp);
+
+    return () => ctx.revert();
   }, []);
 
-  if (!showPage) {
-    return (
-      <div className="bg-black min-h-screen flex items-center">
-        <div className="text-4xl flex flex-grow justify-center text-transparent bg-gradient-to-r from-red-400 via-red-700 to-red-900 bg-clip-text-webkit">
-          <WelcomeText />
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <>
-      <AnimatePresence>
+    <div ref={comp}>
+      <div
+        id="intro-slider"
+        className="h-screen bg-[#1F1F1F] absolute top-0 left-0 z-10 w-full flex justify-center items-center"
+      >
+        <h1 className="text-9xl text-transparent bg-gradient-to-r from-red-400 via-red-700 to-red-900 bg-clip-text-webkit" id="title-1">
+          Welcome
+        </h1>
+      </div>
+      
+      <AnimatePresence>    
         <div className="flex flex-col min-h-screen">
           <div className="bg-black flex-grow">
             <Menu />
@@ -63,7 +67,11 @@ const Home = () => {
                 className="text-white grid md:grid-cols-2 sm:grid-cols-1 gap-4 ml-20"
               >
                 <div className="md:mr-40 w-60 md:w-72 lg:w-96 sm:w-64 md:ml-20">
-                  <img src="/Morin.png" alt="logo" className="transform transition duration-500 hover:scale-110" />
+                  <img
+                    src="/Morin.png"
+                    alt="logo"
+                    className="transform transition duration-500 hover:scale-110"
+                  />
                 </div>
                 <div className="ml-4 mt-12 md:ml-20">
                   <h2 className=" md:text-2xl lg:text-5xl font-bold sm:ml-16 md:ml-0">
@@ -124,7 +132,7 @@ const Home = () => {
           <Footer />
         </div>
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 

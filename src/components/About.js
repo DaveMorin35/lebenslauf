@@ -25,7 +25,7 @@ export default function About() {
       start: '-20% 85%',
       end: '50% 30%',
       scrub: true,
-      markers: true
+      markers: false
   
     }
   })

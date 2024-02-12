@@ -1,3 +1,8 @@
+import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 export default function About() {
 
   const openFileInBrowser = (fileUrl) => {
@@ -13,6 +18,22 @@ export default function About() {
     const cvFile = `${process.env.PUBLIC_URL}/CV.pdf`;
     openFileInBrowser(cvFile);
   };
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger:'#animated-picture',
+      start: '-20% 75%',
+      end: '50% 30%',
+      scrub: true,
+      markers: false
+  
+    }
+  })
+
+  tl.to('#animated-picture', {
+    x: 1300
+  })
+  
 
   return (
     <>
@@ -54,8 +75,8 @@ export default function About() {
               </button>
             </div>
           </div>
-          <div className="w-32  md:w-48 lg:w-64 mt-20 sm:mt-12 lg:ml-0 mb-32">
-            <img src="/Morin.jpg" alt="logo" className="rounded-xl " />
+          <div className="relative left-[-1300px] w-36 md:w-48 lg:w-64 mt-20 sm:mt-12 lg:ml-0 mb-32 animated-picture-container">
+            <img id="animated-picture" src="/Morin.jpg" alt="logo" className="rounded-xl " />
           </div>
         </section>
       </div>

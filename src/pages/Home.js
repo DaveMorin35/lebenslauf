@@ -1,6 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import { AnimatePresence } from "framer-motion";
-import { useState, useEffect, useLayoutEffect, useRef } from "react";
+import { useState, useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import Footer from "../components/Footer";
 import Contact from "../components/Contact";
@@ -10,7 +10,7 @@ import Menu from "../components/Menu";
 import Projects from "../components/Projects";
 
 const Home = () => {
-  const [showAnimation, setShowAnimation] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const comp = useRef(null);
 
   useLayoutEffect(() => {
@@ -22,25 +22,21 @@ const Home = () => {
         duration: 0,
         delay: 0.1,
       })
-        .from(["#title-1", "#title-2", "#title-3"], {
+        .from(["#title-1"], {
           opacity: 0,
           y: "+=60",
           delay:0.3,
         })
-        .to(["#title-1", "#title-2", "#title-3"], {
+        .to(["#title-1"], {
           opacity: 0,
           y: "-=100",
           delay: 0.8,
         })
         .to("#intro-slider", {
           yPercent: "-100",
-          duration: 1.3,
+          duration: 2,
+          onComplete: () => setShowMenu(true),
         })
-        .from("#welcome", {
-          opacity: 0,
-          duration: 0.5,
-          onComplete: () => setShowAnimation(true),
-        });
     }, comp);
 
     return () => ctx.revert();
@@ -52,7 +48,7 @@ const Home = () => {
         id="intro-slider"
         className="h-screen bg-[#1F1F1F] absolute top-0 left-0 z-10 w-full flex justify-center items-center"
       >
-        <h1 className="text-9xl text-transparent bg-gradient-to-r from-red-400 via-red-700 to-red-900 bg-clip-text-webkit" id="title-1">
+        <h1 className="text-4xl md:text-9xl text-transparent bg-gradient-to-r from-red-400 via-red-700 to-red-900 bg-clip-text-webkit" id="title-1">
           Welcome
         </h1>
       </div>
@@ -60,7 +56,8 @@ const Home = () => {
       <AnimatePresence>    
         <div className="flex flex-col min-h-screen">
           <div className="bg-black flex-grow">
-            <Menu />
+            { showMenu && <Menu />}
+            
             <div className="flex flex-col h-screen justify-center items-center">
               <section
                 id="Home"
@@ -84,6 +81,8 @@ const Home = () => {
                         "Java Developer",
                         1500,
                         "Sport addict",
+                        1500,
+                        "Love coding",
                         1500,
                       ]}
                       speed={150}

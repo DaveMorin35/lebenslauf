@@ -75,7 +75,7 @@ export default function About() {
               </button>
             </div>
           </div>
-          <div className="relative left-[-1300px] w-36 md:w-48 lg:w-64 mt-20 sm:mt-12 lg:ml-0 mb-32 animated-picture-container">
+          <div className="relative left-[-1350px] w-36 md:w-48 lg:w-64 mt-20 sm:mt-12 lg:ml-0 mb-32 animated-picture-container">
             <img id="animated-picture" src="/Morin.jpg" alt="logo" className="rounded-xl " />
           </div>
         </section>

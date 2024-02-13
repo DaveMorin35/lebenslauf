@@ -42,9 +42,34 @@ export default function Projects() {
               <h1> Current projects</h1>
             </div>
             <section id="Projects" className="grid ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 grid space-x-4 overflow-hidden">
-            <p className="text-white text-xl">Weekly planner</p>
-            <p className="text-white text-xl">Leather handbag E-Commerce </p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 space-x-4 overflow-hidden">
+          <a
+              href="https://github.com/DaveMorin35/blog.git"
+              target="_blank"
+              rel="noreferrer"
+            >
+            <img 
+            src="blog.png"
+            alt="blog"
+            className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
+            />
+            </a>
+            <a
+              href="https://github.com/DaveMorin35/Weekly-Schedule.git"
+              target="_blank"
+              rel="noreferrer"
+            >
+            <img 
+            src="Weekly_Schedule.png"
+            alt="Weekly_Schedule"
+            className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
+            />
+            </a>
+            <img 
+            src="Bag.png"
+            alt="bag"
+            className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
+            />
           </div>
         </section>
       </div>

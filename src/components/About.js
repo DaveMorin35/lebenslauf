@@ -1,12 +1,11 @@
 import gsap from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-
   const openFileInBrowser = (fileUrl) => {
-    window.open(fileUrl, '_blank');
+    window.open(fileUrl, "_blank");
   };
 
   const handleCertificateDownload = () => {
@@ -21,19 +20,17 @@ export default function About() {
 
   const tl = gsap.timeline({
     scrollTrigger: {
-      trigger:'#animated-picture',
-      start: '-20% 85%',
-      end: '50% 30%',
+      trigger: "#animated-picture",
+      start: "-20% 85%",
+      end: "50% 30%",
       scrub: true,
-      markers: false
-  
-    }
-  })
+      markers: false,
+    },
+  });
 
-  tl.to('#animated-picture', {
-    x: 1300
-  })
-  
+  tl.to("#animated-picture", {
+    x: 1300,
+  });
 
   return (
     <>
@@ -76,7 +73,12 @@ export default function About() {
             </div>
           </div>
           <div className="relative left-[-1450px] w-36 md:w-48 lg:w-64 mt-20 sm:mt-12 lg:ml-0 mb-32 animated-picture-container">
-            <img id="animated-picture" src="/Morin.jpg" alt="logo" className="rounded-xl " />
+            <img
+              id="animated-picture"
+              src="/Morin.jpg"
+              alt="logo"
+              className="rounded-xl "
+            />
           </div>
         </section>
       </div>

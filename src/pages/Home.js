@@ -25,7 +25,7 @@ const Home = () => {
         .from(["#title-1"], {
           opacity: 0,
           y: "+=60",
-          delay:0.3,
+          delay: 0.3,
         })
         .to(["#title-1"], {
           opacity: 0,
@@ -36,7 +36,7 @@ const Home = () => {
           yPercent: "-100",
           duration: 2,
           onComplete: () => setShowMenu(true),
-        })
+        });
     }, comp);
 
     return () => ctx.revert();
@@ -48,16 +48,19 @@ const Home = () => {
         id="intro-slider"
         className="h-screen bg-[#1F1F1F] absolute top-0 left-0 z-10 w-full flex justify-center items-center"
       >
-        <h1 className="text-4xl md:text-9xl text-transparent bg-gradient-to-r from-red-400 via-red-700 to-red-900 bg-clip-text-webkit" id="title-1">
+        <h1
+          className="text-4xl md:text-9xl text-transparent bg-gradient-to-r from-red-400 via-red-700 to-red-900 bg-clip-text-webkit"
+          id="title-1"
+        >
           Welcome
         </h1>
       </div>
-      
-      <AnimatePresence>    
+
+      <AnimatePresence>
         <div className="flex flex-col min-h-screen">
           <div className="bg-black flex-grow">
-            { showMenu && <Menu />}
-            
+            {showMenu && <Menu />}
+
             <div className="flex flex-col h-screen justify-center items-center">
               <section
                 id="Home"

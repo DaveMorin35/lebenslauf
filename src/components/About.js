@@ -21,15 +21,17 @@ export default function About() {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: "#animated-picture",
-      start: "-20% 85%",
+      start: "-20% 80%",
       end: "50% 30%",
-      scrub: true,
+      scrub: false,
       markers: false,
+      toggleActions: 'play pause',
     },
   });
 
   tl.to("#animated-picture", {
-    x: 1300,
+    x: 1400,
+    duration:1
   });
 
   return (

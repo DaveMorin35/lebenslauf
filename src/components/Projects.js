@@ -88,11 +88,17 @@ export default function Projects() {
                 <h3 className="text-gray-200 text-center mb-2">
                   Ramen order system
                 </h3>
+                <a
+                  href="https://github.com/DaveMorin35/Online_Order_Ramen.git"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                 <img
                   src="Ramen.png"
                   alt="ramen"
                   className="rounded-lg max-h-36 transition ease-in-out duration-700 hover:scale-110"
                 />
+                </a>
               </div>
             </div>
           </Fade>

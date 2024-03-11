@@ -114,13 +114,13 @@ export default function Skills() {
             </div>
           </Fade>
           <Fade direction="up">
-            {/* SQL*/}
+            {/* PostSQL*/}
             <div className="mr-10 flex items-center">
               <div className="mr-2">
-                <img src="/sql.png" alt="logo" className="invert w-6 sm:w-8" />
+                <img src="/Postsql.png" alt="logo" className="invert w-6 sm:w-8" />
               </div>
               <div className="text-white">
-                <h1 className="pt-2 sm:pt-5">Sql</h1>
+                <h1 className="pt-2 sm:pt-5">PostgreSQL</h1>
                 <div className="mt-2 h-2 relative w-60 rounded-full overflow-hidden">
                   <div className="h-full bg-red-700 absolute w-full"></div>
                 </div>
